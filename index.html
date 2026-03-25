@@ -1,115 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2563EB">
-    <link rel="icon" href="imthy.jpeg" type="image/x-icon">
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imthy Safa | Portfolio</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        img { max-width: 100%; height: auto; display: block; }
-        .nav-link { padding: 0.5rem 0.75rem; display: inline-block; }
-    </style>
-    <script>
-        function toggleMenu(){
-            document.getElementById('mobileNav').classList.toggle('hidden');
-        }
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style>
+html { scroll-behavior: smooth; }
+
+.glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+</style>
+
+<script>
+function toggleMenu(){
+    document.getElementById('mobileNav').classList.toggle('hidden');
+}
+</script>
+
 </head>
-<body>
-    <div class="bg-gray-100 text-gray-800 shadow-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <h1 class="text-2xl md:text-4xl text-blue-600 font-bold">My Portfolio</h1>
-            <div class="md:hidden">
-                <button onclick="toggleMenu()" aria-label="Open menu" class="p-2 rounded-md bg-white border border-blue-600 text-blue-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="hidden md:flex space-x-4 items-center">
-                <a href="#home" class="nav-link text-sm text-blue-600 bg-white border border-blue-600 rounded-lg hover:text-blue-900">Home</a>
-                <a href="#about" class="nav-link text-sm text-blue-600 bg-white border border-blue-600 rounded-lg hover:text-blue-900">About</a>
-                <a href="#skills" class="nav-link text-sm text-blue-600 bg-white border border-blue-600 rounded-lg hover:text-blue-900">Skills</a>
-                <a href="#project" class="nav-link text-sm text-blue-600 bg-white border border-blue-600 rounded-lg hover:text-blue-900">Projects</a>
-                <a href="#contact" class="nav-link text-sm text-blue-600 bg-white border border-blue-600 rounded-lg hover:text-blue-900">Contact</a>
-            </nav>
-        </div>
-        <div id="mobileNav" class="md:hidden hidden bg-gray-100 border-t border-gray-200">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#home" class="block nav-link text-blue-600 rounded">Home</a>
-                <a href="#about" class="block nav-link text-blue-600 rounded">About</a>
-                <a href="#skills" class="block nav-link text-blue-600 rounded">Skills</a>
-                <a href="#project" class="block nav-link text-blue-600 rounded">Projects</a>
-                <a href="#contact" class="block nav-link text-blue-600 rounded">Contact</a>
-            </div>
-        </div>
+
+<body class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
+
+<!-- NAVBAR -->
+<div class="fixed w-full z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">Imthy</h1>
+
+        <nav class="hidden md:flex space-x-6">
+            <a href="#home" class="hover:text-blue-400 transition">Home</a>
+            <a href="#about" class="hover:text-blue-400 transition">About</a>
+            <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+            <a href="#project" class="hover:text-blue-400 transition">Projects</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        </nav>
+
+        <button onclick="toggleMenu()" class="md:hidden text-white">☰</button>
     </div>
-    <div class="pt-28 pb-12 bg-blue-600 text-white" id="home">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hi, I am Imthy Safa</h2>
-                <p class="text-base md:text-lg mb-6">I am a beginner web developer.</p>
-            </div>
-            <div class="md:w-1/3 mt-6">
-                <img src="imthy.jpeg" alt="Profile Image" class="rounded-lg shadow-lg mx-auto w-40 md:w-64">
-            </div>
-        </div>
+
+    <div id="mobileNav" class="hidden px-4 pb-4 space-y-2">
+        <a href="#home" class="block">Home</a>
+        <a href="#about" class="block">About</a>
+        <a href="#skills" class="block">Skills</a>
+        <a href="#project" class="block">Projects</a>
+        <a href="#contact" class="block">Contact</a>
     </div>
-    <div id="about">
-        <div class="max-w-5xl mx-auto px-4 text-center py-16">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6">About Me</h2>
-            <p class="text-gray-600 text-base md:text-lg leading-relaxed">
-                I am SM Imthy Safa. I live in Weerachcholai. I learn web development and make useful websites.
-                I like programming very much and I want to be a good web developer.
-                I also like to read books, play video games and watch movies in my free time.
-            </p>
-        </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="pt-32 pb-20 text-center fade-in">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+        Hi, I'm <span class="text-blue-400">Imthy Safa</span>
+    </h2>
+    <p class="text-lg text-gray-300 mb-6">Beginner Web Developer</p>
+
+    <img src="imthy.jpeg" class="mx-auto w-40 rounded-full border-4 border-blue-500 shadow-lg hover:scale-105 transition duration-500">
+
+    <div class="mt-6">
+        <a href="#project" class="px-6 py-3 bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 transition">
+            View My Work
+        </a>
     </div>
-    <div class="bg-blue-600 mx-auto px-4 text-center py-12" id="skills">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">My Skills</h2>
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-            <div class="bg-white text-blue-600 px-4 py-3 rounded-lg shadow">Python</div>
-            <div class="bg-white text-blue-600 px-4 py-3 rounded-lg shadow">HTML</div>
-            <div class="bg-white text-blue-600 px-4 py-3 rounded-lg shadow">CSS</div>
-            <div class="bg-white text-blue-600 px-4 py-3 rounded-lg shadow">JS</div>
-        </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-4xl mx-auto text-center py-16 fade-in">
+    <h2 class="text-3xl font-bold mb-6 text-blue-400">About Me</h2>
+    <p class="text-gray-300 leading-relaxed">
+        I am SM Imthy Safa from Weerachcholai. I am learning web development and building useful websites.
+        I love coding and my goal is to become a professional developer.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-16 text-center fade-in">
+    <h2 class="text-3xl font-bold mb-8 text-blue-400">Skills</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="glass p-4 rounded-xl hover:scale-105 transition">Python</div>
+        <div class="glass p-4 rounded-xl hover:scale-105 transition">HTML</div>
+        <div class="glass p-4 rounded-xl hover:scale-105 transition">CSS</div>
+        <div class="glass p-4 rounded-xl hover:scale-105 transition">JavaScript</div>
     </div>
-    <div class="bg-white mx-auto px-4 text-center py-12" id="project">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">My Projects</h2>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-            <div class="space-y-2">
-                <img src="calcu.jpg" alt="Calculator" class="rounded-lg shadow-lg w-1/2 mx-auto">
-                <a href="https://calculator-rust-iota-46.vercel.app/" class="inline-block rounded-lg shadow px-4 py-2 bg-blue-600 text-white">Calculator</a>
-            </div>
-            <div class="space-y-2">
-                <img src="counter.png" alt="Counter" class="rounded-lg shadow-lg w-1/2 mx-auto">
-                <a href="https://imthy-s-counter.vercel.app/" class="inline-block rounded-lg shadow px-4 py-2 bg-blue-600 text-white">Counter</a>
-            </div>
-            <div class="space-y-2">
-                <img src="qr-code.png" alt="QR Generator" class="rounded-lg shadow-lg w-1/2 mx-auto">
-                <a href="https://qr-code-generator-seven-dusky.vercel.app/" class="inline-block rounded-lg shadow px-4 py-2 bg-blue-600 text-white">QR Generator</a>
-            </div>
-            <div class="space-y-2">
-                <img src="quiz.png" alt="MCQ Quiz" class="rounded-lg shadow-lg w-1/2 mx-auto">
-                <a href="https://imthy-s-quiz-test.vercel.app/" class="inline-block rounded-lg shadow px-4 py-2 bg-blue-600 text-white">MCQ Quiz</a>
-            </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="project" class="py-16 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-400">Projects</h2>
+
+    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+
+        <div class="glass p-4 rounded-xl hover:scale-105 transition text-center">
+            <img src="calcu.jpg" class="rounded-lg mb-3">
+            <a href="https://calculator-rust-iota-46.vercel.app/" target="_blank"
+            class="bg-blue-500 px-4 py-2 rounded-lg inline-block">Calculator</a>
         </div>
-    </div>
-    <div class="bg-blue-600" id="contact">
-        <div class="max-w-5xl mx-auto px-4 text-center py-12">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6">Contact Me</h2>
-            <p class="text-gray-600 text-base md:text-lg mb-6">Feel free to reach out to me via email or phone.</p>
-            <img src="what.jpg" alt="Contact Image" class="rounded-lg shadow-lg mx-auto mb-6 w-32 md:w-48">
-            <div class="mb-6">
-                <a href="https://wa.me/94751825916" target="_blank" class="inline-block px-4 py-2 bg-white text-green-600 rounded-lg shadow">Chat on WhatsApp</a>
-            </div>
-            <p class="text-gray-600 text-base md:text-lg">Email 📧 : safaimthy62@gmail.com</p>
+
+        <div class="glass p-4 rounded-xl hover:scale-105 transition text-center">
+            <img src="counter.png" class="rounded-lg mb-3">
+            <a href="https://imthy-s-counter.vercel.app/" target="_blank"
+            class="bg-blue-500 px-4 py-2 rounded-lg inline-block">Counter</a>
         </div>
+
+        <div class="glass p-4 rounded-xl hover:scale-105 transition text-center">
+            <img src="qr-code.png" class="rounded-lg mb-3">
+            <a href="https://qr-code-generator-seven-dusky.vercel.app/" target="_blank"
+            class="bg-blue-500 px-4 py-2 rounded-lg inline-block">QR Generator</a>
+        </div>
+
+        <div class="glass p-4 rounded-xl hover:scale-105 transition text-center">
+            <img src="quiz.png" class="rounded-lg mb-3">
+            <a href="https://imthy-s-quiz-test.vercel.app/" target="_blank"
+            class="bg-blue-500 px-4 py-2 rounded-lg inline-block">MCQ Quiz</a>
+        </div>
+
     </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="text-center py-16 fade-in">
+    <h2 class="text-3xl font-bold mb-6 text-blue-400">Contact Me</h2>
+
+    <img src="what.jpg" class="mx-auto w-32 mb-6 rounded-lg">
+
+    <a href="https://wa.me/94751825916" target="_blank"
+    class="bg-green-500 px-6 py-3 rounded-full shadow hover:bg-green-600 transition">
+        WhatsApp Me
+    </a>
+
+    <p class="mt-6 text-gray-400">📧 safaimthy62@gmail.com</p>
+</section>
+
 </body>
-
 </html>
-
